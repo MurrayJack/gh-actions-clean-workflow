@@ -21,7 +21,7 @@ async function run() {
     let amount = 0
 
     do {
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      await new Promise(resolve => setTimeout(resolve, 5000));
 
       /**
        * We need to fetch the list of workflow runs for a particular repo.
