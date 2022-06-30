@@ -32,12 +32,10 @@ async function run() {
       repo,
       status: "completed",
       per_page: 100,
-      created: "<2022-05-01"
+      created: new Date(new Date().setDate(new Date().getDate() - numDaysOldToBeDeleted)).toISOString()
     });
 
     const hasRunBeforeDate = (run) => {
-      info(JSON.stringify(run.updated_at))
-
       const diff = dateDiff(run.updated_at, Date.now());
       return calcTimeUnits(diff).days >= numDaysOldToBeDeleted;
     };
