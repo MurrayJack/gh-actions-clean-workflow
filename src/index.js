@@ -32,6 +32,7 @@ async function run() {
       repo,
       status: "completed",
       per_page: 100,
+      created: "<2022-05-01"
     });
 
     const hasRunBeforeDate = (run) => {
