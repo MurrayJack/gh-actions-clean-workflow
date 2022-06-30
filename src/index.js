@@ -21,6 +21,8 @@ async function run() {
     let amount = 0
 
     do {
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
       /**
        * We need to fetch the list of workflow runs for a particular repo.
        * We use octokit.paginate() to automatically loop over all the pages of the results.
