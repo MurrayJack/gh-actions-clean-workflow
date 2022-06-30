@@ -35,6 +35,8 @@ async function run() {
     });
 
     const hasRunBeforeDate = (run) => {
+      info(JSON.stringify(run.updated_at))
+
       const diff = dateDiff(run.updated_at, Date.now());
       return calcTimeUnits(diff).days >= numDaysOldToBeDeleted;
     };
