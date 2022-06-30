@@ -39,6 +39,8 @@ async function run() {
       return calcTimeUnits(diff).days >= numDaysOldToBeDeleted;
     };
 
+    info(`${data.workflow_runs.length} total workflow runs`)
+
     const workflowRunsToDelete = data.workflow_runs.filter(hasRunBeforeDate);
 
     info(`${workflowRunsToDelete.length} workflow runs to be deleted`);
