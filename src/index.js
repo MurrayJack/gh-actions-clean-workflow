@@ -21,7 +21,7 @@ async function run() {
     let amount = 0
 
     do {
-      await new Promise(resolve => setTimeout(resolve, 30000));
+      
 
       /**
        * We need to fetch the list of workflow runs for a particular repo.
@@ -74,11 +74,10 @@ async function run() {
           `${requests.length} workflow runs successfully deleted`
         );
       }
+
+      await new Promise(resolve => setTimeout(resolve, 30000));
+
     } while (amount != 0)
-
-
-
-
 
 
   } catch (error) {
